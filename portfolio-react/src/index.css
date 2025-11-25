@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* GLOBAL */
+html, body, #root { 
+  height: 100%; 
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply text-gray-900 antialiased;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e9edf3 50%, #e3e8ef 100%);
+  font-family: 'Inter', sans-serif;
+  transition: background 0.4s ease;
+}
+
+/* SECTION SPACING */
+section {
+  @apply py-14;
+}
+
+/* CONTAINER */
+.container { 
+  @apply max-w-6xl mx-auto px-6;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* CARD — Glass + Soft Shadow Hybrid */
+.card { 
+  @apply bg-white/80 backdrop-blur-xl rounded-3xl p-7 shadow-xl border border-white/30;
+  transition: all 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 18px 35px rgba(0,0,0,0.12);
+  background: rgba(255,255,255,0.9);
+}
+
+/* HEADER SHADOW */
+header {
+  @apply bg-white/70 backdrop-blur-md border-b border-white/30;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+/* SECTION TITLE STYLE */
+h2 {
+  @apply text-3xl font-extrabold mb-6 text-gray-800;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  @apply block w-16 h-1 bg-blue-600 rounded-full mt-1;
+}
+
+/* TYPOGRAPHY */
+h1, h2, h3 {
+  @apply tracking-tight;
+}
+
+h1 {
+  @apply text-gray-900;
+}
+
+p {
+  @apply leading-relaxed text-gray-700;
+}
+
+/* BUTTONS */
+button, a {
+  transition: all 0.25s ease;
+}
+
+button:hover, a:hover {
+  transform: translateY(-2px);
+}
+
+/* FADE ANIMATIONS */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade {
+  animation: fadeInUp 0.7s ease forwards;
+}
+
+/* PAGE LOAD FADE */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* SECTION DIVIDER */
+.section-divider {
+  @apply w-full h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent my-12;
+}
+
+/* IMAGE SHADOW IMPROVED */
+img {
+  transition: all 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* FOOTER */
+footer {
+  @apply py-6 text-center text-gray-600;
+  border-top: 1px solid rgba(255,255,255,0.4);
+  backdrop-filter: blur(10px);
+}
